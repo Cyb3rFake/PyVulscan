@@ -163,11 +163,26 @@ def check_sqlmap_installed():
         if e.errno == os.errno.ENOENT:
             return False
     return True
+
+
+def check_nmap_installed():
+    """
+    Проверка устновки nmap
+    """
+    try:
+        os.system("nmap --version")
+    except OSError as e:
+        if e.errno == os.errno.ENOENT:
+            return False
+    return True
+
 if __name__ == '__main__':
-    if check_sqlmap_installed():
-        print("SQLMap установлен в системе")
-        asyncio.run(main())
-    else:
+    if check_sqlmap_installed()!=True:
         print("SQLMap не установлен в системе")
         exit(1)
+    elif check_nmap_installed()!=True:
+        print("nmap не установлен в системе")
+        exit(1)
+    else:
+        asyncio.run(main())
 
