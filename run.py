@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import asyncio
 import sys
 import logging
@@ -85,7 +86,7 @@ def scan_ports(subdomain: str):
     Сканирует поддомены с выводом полученных ответов в коноль    
     """
     nm = nmap.PortScanner()
-    _ = nm.scan(subdomain, arguments="-sV --script vulners", sudo=True)
+    _ = nm.scan(subdomain, arguments="-sV --script vulners")
     for host in nm.all_hosts():
         for proto in nm[host].all_protocols():
             lport = nm[host][proto].keys()
