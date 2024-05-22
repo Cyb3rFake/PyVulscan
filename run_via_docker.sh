@@ -1,20 +1,22 @@
 #!/bin/bash
-echo Введите домен
-
-# read domain
 $1
 
-# if [ ! dpkg -l | grep docker | awk '{print $2}' &> /dev/null ] 
+
 if [ "$(which docker)" = "" ] 
 then
-echo "Docker is not installed. Installing Docker..."
-# Install Docker
+echo "Docker is not installed"
+echo "Install docker? (y/n)"
+read ANSWER
+
+if [ $ANSWER!="y"]
+then
+echo "install docker manualy and try again..."
+exit
+fi
+
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 
-# else
-# echo "Docker is already installed."
-
 fi
-docker build -t vscaner:1 .
+DOCKER_BUILDKIT=1 docker build -t vscaner:1 .
 command docker run -it vscaner:1 $1

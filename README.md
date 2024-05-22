@@ -1,10 +1,10 @@
 # PyVulscan
-## Python vulnerability scanner based on nmap and sqlmap
+## Python vulnerability scanner based on [nmap](http://nmap.org/) and [sqlmap](https://sqlmap.org/)
 
 ### TO RUN:
 `python run.py -d example.com`
 
-### TO RUN WITH DOCKER:
+### TO RUN WITH [DOCKER](https://docs.docker.com/engine/install/ "Установка докера"):
 
 #### install docker by script:
 `sudo sh get-docker.sh` 

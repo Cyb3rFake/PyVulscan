@@ -14,7 +14,7 @@ from nmap import nmap
 client = httpx.AsyncClient()  # Клиент асинхронных запросов
 
 # Настройка логов
-logger = logging.getLogger('scanner')
+logger = logging.getLogger('PyVulscan')
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 log_handler = logging.StreamHandler()  # Вывод логов в консоль
@@ -56,6 +56,9 @@ async def collect_subdomains(domain: str):
 
 
 # async def collect_subdomains(domain: str):
+#     """
+#       Поиск поддоменов через nmap dns-brute
+#     """
 #     nm = nmap.PortScanner()
 #     r = nm.scan(domain,arguments='-p 80 --script "dns-brute"',sudo=True)
 #     d_ip_list =list(r.get('scan').keys())
@@ -83,7 +86,7 @@ async def async_scan_port(subdomain: str):
 
 def scan_ports(subdomain: str):
     """
-    Сканирует поддомены с выводом полученных ответов в коноль    
+    Сканирует поддомены с выводом полученных ответов в консоль    
     """
     nm = nmap.PortScanner()
     _ = nm.scan(subdomain, arguments="-sV --script vulners")
@@ -112,14 +115,12 @@ def check_empty_folders(path: str):
             shutil.rmtree(path)
             return True
     except Exception as e:
-        logger.error(f"Can't delete folder {path}: {e}")
+        logger.error(f"Не удалось удалить {path}: {e}")
 
 
 async def run_sqlmap(subdomain: str):
     """
-    Запускает sqlmap, он должен быть уже установлен на локальном хосте
-    Сканирует на sql-injecion, xss список доменов
-
+    Запускает sqlmap, он должен быть уже установлен в системе
     --crawl=1 - дополнитьельно сканирует ссылки(вложенность 1) на сайте
     --batch   - отключает интерактивный режим
     --random-agent - использует разные агенты для подключения
