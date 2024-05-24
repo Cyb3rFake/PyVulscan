@@ -1,8 +1,12 @@
 # PyVulscan
 ## Python vulnerability scanner based on [nmap](http://nmap.org/) and [sqlmap](https://sqlmap.org/)
 
+>[!INFO]
+Before run scanner on your host make shure that sqlmap and namp installed.
+>
+
 ### TO RUN:
-`python run.py -d example.com`
+```python run.py -d example.com```
 
 ### TO RUN WITH [DOCKER](https://docs.docker.com/engine/install/ "Установка докера"):
 
