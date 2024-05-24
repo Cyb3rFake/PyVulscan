@@ -2,7 +2,7 @@
 ## Python vulnerability scanner based on [nmap](http://nmap.org/) and [sqlmap](https://sqlmap.org/)
 
 
-Before run scanner on your host make shure that sqlmap and namp installed.
+*Before run scanner on your host make shure that sqlmap and namp installed.*
 
 
 
