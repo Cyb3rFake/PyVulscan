@@ -8,7 +8,7 @@ echo "Docker is not installed"
 echo "Install docker? (y/n)"
 read ANSWER
 
-if [ $ANSWER!="y"]
+if [ $ANSWER!="y" ]
 then
 echo "install docker manualy and try again..."
 exit
