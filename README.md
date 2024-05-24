@@ -4,14 +4,23 @@
 
 *Before run scanner on your host make shure that sqlmap and namp installed.*
 
-
-
-
-
-
-
 ### TO RUN:
+##### Install modules:
+
+```pip install -r requirements```
+
+##### Replace "example.com" with the your scan targer:
+
 ```python run.py -d example.com```
+***
+
+#### Or use venv
+##### Create venv and install modules:
+```python -m venv venv && source venv/bin/activate && pip install -r requirements```
+
+##### Replace "example.com" with the your scan targer
+```python run.py -d example.com```
+***
 
 ### TO RUN WITH [DOCKER](https://docs.docker.com/engine/install/ "Установка докера"):
 
@@ -21,5 +30,6 @@
 `DOCKER_BUILDKIT=1 docker build -t scaner:1 .`
 ##### run dokcer container with argument
 `docker run -it --rm scaner:1 examle.com`
+***
 ##### OR run script with argument
 `sh run_via_docker.sh example.com`
