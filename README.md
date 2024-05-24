@@ -1,8 +1,9 @@
 # PyVulscan
 ## Python vulnerability scanner based on [nmap](http://nmap.org/) and [sqlmap](https://sqlmap.org/)
 
-<div class="warning"> Before run scanner on your host make shure that sqlmap and namp installed.
-</div>
+
+Before run scanner on your host make shure that sqlmap and namp installed.
+
 
 
 
