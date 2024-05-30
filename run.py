@@ -23,13 +23,6 @@ log_handler.setFormatter(formatter)
 logger.addHandler(log_handler)
 
 logging.basicConfig(filename="logs.log",level=logging.INFO)
-if not os.path.exists("logs.txt"):
-    os.system('touch logs.txt')
-
-# log_file = logging.FileHandler(filename="logs.txt",
-#                                mode="a",
-#                                encoding="utf-8"
-# )
 
 executor = ThreadPoolExecutor(max_workers=10)
 
