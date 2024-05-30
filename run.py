@@ -66,16 +66,16 @@ async def collect_subdomains(domain: str):
 #     r = nm.scan(domain,arguments='-p 80 --script "dns-brute"',sudo=True)
 #     d_ip_list =list(r.get('scan').keys())
 
-#     res = set()
+#     local_subdomains = set()
 #     for record in d_ip_list:
 #         _=[]
 #         for i in r['scan'][record]['hostscript'][0]['output'].split('\n')[2:]:
 #             if '*' not in i.strip():
 #                 _.append(i.strip())
 #             for j in _:
-#                 res.add(j.split(' ')[0].replace('www.',''))
-#     logger.info(res)
-#     return(list(res))
+#                 local_subdomains.add(j.split(' ')[0].replace('www.',''))
+#     logger.info(local_subdomains)
+#     return(list(local_subdomains))
 
 
 
