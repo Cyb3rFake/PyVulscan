@@ -2,6 +2,7 @@ anyio==4.3.0
 asyncclick==8.1.7.2
 asyncio==3.4.3
 certifi==2024.2.2
+colorama==0.4.6
 exceptiongroup==1.2.1
 h11==0.14.0
 httpcore==1.0.5

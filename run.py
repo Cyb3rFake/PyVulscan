@@ -5,6 +5,7 @@ import logging
 import os
 import re
 import shutil
+from colorama import Fore, Style
 from concurrent.futures import ThreadPoolExecutor
 
 import asyncclick as click
@@ -158,32 +159,31 @@ def check_sqlmap_installed():
     """
     Проверка устновки sqlmap
     """
-    try:
-        os.system("sqlmap --version")
-    except OSError as e:
-        if e.errno == os.errno.ENOENT:
-            return False
-    return True
+    if os.path.exists("/usr/bin/sqlmap")!=True:
+        return False
+    else:
+        return True
 
 
 def check_nmap_installed():
     """
     Проверка устновки nmap
     """
-    try:
-        os.system("nmap --version")
-    except OSError as e:
-        if e.errno == os.errno.ENOENT:
-            return False
-    return True
+    if os.path.exists("/usr/bin/nmap")!=True:
+        return False
+    else:
+        return True
 
 if __name__ == '__main__':
     if check_sqlmap_installed()!=True:
         print("SQLMap не установлен в системе")
-        exit(1)
+        exit()
+
     elif check_nmap_installed()!=True:
         print("nmap не установлен в системе")
-        exit(1)
+        exit()
     else:
+        os.system('clear')
+        print(Fore.LIGHTMAGENTA_EX+"Scanning in process..."+Style.RESET_ALL)
         asyncio.run(main())
 

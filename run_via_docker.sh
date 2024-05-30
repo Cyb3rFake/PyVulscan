@@ -25,4 +25,4 @@ if [ "$(which docker)" = "" ]
 fi
 
 DOCKER_BUILDKIT=1 docker build -t vscaner:1 .
-command docker run -it --rm vscaner:1 $1
+command docker run -it --rm --name scaner vscaner:1 $1
