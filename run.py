@@ -15,6 +15,7 @@ from nmap import nmap
 client = httpx.AsyncClient()  # Клиент асинхронных запросов
 
 # Настройка логов
+logging.basicConfig(filename="logs.log",level=logging.INFO)
 logger = logging.getLogger('PyVulscan')
 logger.setLevel(logging.INFO)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -22,7 +23,6 @@ log_handler = logging.StreamHandler()  # Вывод логов в консоль
 log_handler.setFormatter(formatter)
 logger.addHandler(log_handler)
 
-logging.basicConfig(filename="logs.log",level=logging.INFO)
 
 executor = ThreadPoolExecutor(max_workers=10)
 
