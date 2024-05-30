@@ -24,9 +24,9 @@
 ```python run.py -d example.com```
 ***
 
-### TO RUN WITH [DOCKER](https://docs.docker.com/engine/install/ "Установка докера"):
-
-#### install docker by script:
+### TO RUN WITH [DOCKER](https://docs.docker.com/engine/install/ "Docker installation"):
+#### install docker manualy [DOCKER](https://docs.docker.com/engine/install/ "Docker installation")
+#### or with script:
 `sudo sh get-docker.sh` 
 #### build docker image:
 `DOCKER_BUILDKIT=1 docker build -t scaner:1 .`
