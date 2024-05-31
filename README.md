@@ -7,9 +7,10 @@
 *Before run scanner on your host make shure that sqlmap and namp installed.*
 
 ### TO RUN:
-#### Download manyaly or using wget:
-```wget https://github.com/Cyb3rFake/PyVulscan.git && cd PyVulscan```
-
+#### Download manualy or using wget:
+```wget https://github.com/Cyb3rFake/PyVulscan.git && cd PyVulscan```\
+Make scripts executable:
+```chmod +x get-docker.sh run_via_docker.sh```
 ##### Install modules:
 
 ```pip install -r requirements```
