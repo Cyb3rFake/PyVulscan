@@ -1,5 +1,4 @@
 ![PyVulscan](img.webp "PyVulscan")
-```wget https://github.com/Cyb3rFake/PyVulscan.git && cd PyVulscan```
 # <p style="text-align: center;">PyVulscan</p>
 
 ## Python vulnerability scanner based on [nmap](http://nmap.org/) and [sqlmap](https://sqlmap.org/)
@@ -8,6 +7,9 @@
 *Before run scanner on your host make shure that sqlmap and namp installed.*
 
 ### TO RUN:
+#### Download manyaly or using wget:
+```wget https://github.com/Cyb3rFake/PyVulscan.git && cd PyVulscan```
+
 ##### Install modules:
 
 ```pip install -r requirements```
